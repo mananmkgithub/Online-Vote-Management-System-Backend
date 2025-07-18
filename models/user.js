@@ -1,0 +1,45 @@
+const mongoose = require("mongoose");
+const Userschema=new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    age:{
+        type:Number,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    mobile:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    address:{
+        type:String,
+        required:true
+    },
+    aadharcardnumber:{
+        type:Number,
+        required:true,
+        unique:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    role:{
+        type:String,
+        enum:["voter","admin"],
+        default:"voter"
+    },
+    isvoted:{
+        type:Boolean,
+        default:false
+    }
+})
+
+module.exports=mongoose.model('User',Userschema)
