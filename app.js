@@ -13,7 +13,7 @@ app.use('/api/user', userroute)
 app.use('/api/candidate',candidate)
 
 app.use((req,res,next)=>{
-     res.status(404).json({message:'PAge Not Found..'})
+     res.status(404).json({message:'Page Not Found..'})
 })
 mongoose.connect(process.env.DB_URL).then(() => {
      app.listen(PORT, () => {
